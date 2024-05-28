@@ -1,0 +1,14 @@
+#!/bin/bash
+
+screenshotPath="/home/giack/pictures/screenshots/$(date +'%d-%m-%Y -> %T')_$RANDOM.jpg"
+
+maim -su "$screenshotPath"
+
+if [ $? -ne 0 ]; then
+	notify-send "Screenshot Error" "Error capturing screenshot."
+	exit 1
+fi
+
+xclip -selection clipboard -t image/jpeg -i "$screenshotPath"
+
+notify-send "Screenshot Taken and Copied" "Screenshot saved: $screenshotPath"

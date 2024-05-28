@@ -1,0 +1,15 @@
+#!/bin/bash
+
+get_layout() {
+	layout=$(setxkbmap -query | awk '/layout/ {print $2}')
+	echo "$layout"
+}
+
+current_layout=$(get_layout)
+if [ "$current_layout" == "us" ]; then
+	setxkbmap it
+	notify-send "Keyboard Layout: Italian"
+else
+	setxkbmap us
+	notify-send "Keyboard Layout: US English"
+fi

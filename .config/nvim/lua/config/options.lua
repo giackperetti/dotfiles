@@ -1,0 +1,19 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+
+-- Reduce time it takes neovim to launch menus
+vim.opt.timeout = true
+vim.opt.timeoutlen = 0
+
+-- Set default tab size
+vim.opt.tabstop = 2
+vim.opt.expandtab = true
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+
+-- Make sure Nerd Fonts are used
+vim.g.have_nerd_font = true
+
+-- Disable spell checking
+vim.opt.spell = false

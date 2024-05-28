@@ -1,0 +1,10 @@
+[user]
+	email = github.giack@gmail.com
+	name = giackperetti
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim

@@ -1,0 +1,125 @@
+# Variables
+set $mod Mod4
+set $alt Mod1
+set $wallpaper_path /home/giack/pictures/Wallpapers/Images/Drawing/Studio\ Ghibli/wind_rises/forest.png
+
+# Settings
+font pango:JetBrains Mono 10
+default_border pixel
+gaps inner 10
+gaps outer 5
+
+# Autostart
+exec --no-startup-id dunst
+exec --no-startup-id multi_monitor $wallpaper_path
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
+exec --no-startup-id nm-applet
+exec --no-startup-id cbatticon
+exec --no-startup-id volctl
+exec xrdb ~/.Xresources
+exec_always --no-startup-id xset dpms 0 0 900 &
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l &
+
+# Border Settings               border  backgr. text    indicator child_border
+client.focused                  #458588 #272727 #ebdbb2 #1E84B0   #1E84B0
+client.focused_inactive         #83a598 #272727 #15485E #15485E   #15485E
+client.unfocused                #83a598 #272727 #888888 #1A4253   #1A4253
+client.urgent                   #cc241d #272727 #ebdbb2 #900000   #900000
+client.placeholder              #000000 #272727 #ebdbb2 #000000   #0c0c0c
+client.background               #ffffff
+
+# Apps
+bindsym $mod+Return exec kitty
+bindsym $mod+$alt+d exec --no-startup-id rofi -font "JetBrains Mono 10" -modi window -show
+bindsym $mod+d exec --no-startup-id rofi -font "JetBrains Mono 10" -modi drun -show
+bindsym $mod+$alt+End exec --no-startup-id rofi -font "JetBrainsMono Nerd Font Mono 10" -show menu -modi "menu:rofi-power-menu --choices=logout/shutdown/reboot" -show-icons
+
+# Restart i3
+bindsym $mod+Shift+r restart
+# Lock session using betterlockscreen
+bindsym $mod+Shift+Escape exec betterlockscreen -l
+# Take a screenshot with a custom script
+bindsym $mod+Shift+s exec /home/giack/.local/bin/screenshot
+
+# Brightness Control(Fn + F5/F6)
+bindsym XF86MonBrightnessDown exec /home/giack/.local/bin/changeBrightness down
+bindsym XF86MonBrightnessUp exec /home/giack/.local/bin/changeBrightness up
+
+# Layout Switcher(Fn + F12)
+bindsym XF86Explorer exec /home/giack/.local/bin/toggle_keyboard_layout
+
+# Window Management
+bindsym $mod+q kill
+floating_modifier $mod
+bindsym $alt+Tab focus next
+bindsym $mod+$alt+h move left
+bindsym $mod+$alt+j move down
+bindsym $mod+$alt+k move up
+bindsym $mod+$alt+l move right
+bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+Tab floating toggle
+bindsym $mod+Control+h split v
+bindsym $mod+Control+v split h
+bindsym $mod+Shift+l resize shrink width 20 px
+bindsym $mod+Shift+j resize grow height 20 px
+bindsym $mod+Shift+k resize shrink height 20 px
+bindsym $mod+Shift+h resize grow width 20 px
+
+# Change Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+
+# Bar
+bar {
+      tray_output primary
+      # i3bar_command i3bar --transparency
+      status_command i3status
+      font pango:JetBrains Mono 11
+      strip_workspace_numbers yes
+      strip_workspace_name yes
+      workspace_buttons yes
+      position bottom
+
+      colors {
+        #background can be #282828(gruvbox black, no transparency) or #00000000(fully transparent)
+        background #282828
+        statusline #ebdbb2
+
+        focused_workspace   #ebdbb2 #458588
+        active_workspace    #ebdbb2 #458588
+        inactive_workspace  #ebdbb2 #83a598
+        urgent_workspace    #ebdbb2 #cc241d
+      }
+}
+
+# Rules
+for_window [class="^.*"] border pixel 2
+# for_window [class="rofi"] floating toggle
+for_window [class="Qalculate-gtk" instance="qalculate-gtk"] floating enable
+for_window [class="Nitrogen" instance="nitrogen"] floating enable

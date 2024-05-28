@@ -1,0 +1,100 @@
+ln(1)
+2 * -0
+2 (x - 1)
+sqrt(1)
+2*-8
+(-12)^2
+sqrt(144)
+diff(x^4 + 2(x^3))
+diff(x*(e^x))
+diff(-x^2)
+ln(0 + 1)
+3^2
+diff(1/x)
+ln(PlusInfinity 
+e^(2/0)
+2/0
+2/0 = PlusInfinity 
+e ^ PlusInfinity 
+ln 0
+diff(2/x)
+diff(2lnx)
+PlusInfinity / 0
+PlusInfinity / 0.999999999999999
+sin(5x)
+sin(0)
+tan(0)
+cos(3*0)^
+cos(3*0)^2
+55160 / 12
+5% of 4596
+5% 4596
+4596 - 5%
+70 / 12
+100 / 12
+9.99 * 12
+6.99 * 12
+diff((x-1)/(x))
+2*ln(1) * 1
+(2*ln(1)) * 1
+diff((3x)/(x+2))
+2 * ((3x)/(x+2))
+diff(2x^4)
+diff(tan(x))
+alsia
+alias
+tan = "tg"
+tg
+tg(x)
+ls
+5 m/s to km
+200 km/h to m/s
+2xcos(x) * x
+(x^2)^2
+diff((4)/(x^2))
+ln(PlusInfinity)
+1 + 1/x
+1 + (1/x)
+arctan
+arctan(0)
+diff(arctan(2x))
+ln(0)
+e ^ MinusInfinity 
+sqrt(MinusInfinity)
+sqrt(2-MinusInfinity)
+(8.92 + 6.5) / 2
+(8.92 + 7.5) / 2
+(8.92 + 7) / 2
+(8.92 + 8) / 2
+(8.92 + 8.5) / 2
+(8.92 + 9) / 2
+(8.92 + 9.5) / 2
+(8.92 + 01) / 2
+(8.92 + 10) / 2
+(8.92 + 4) / 2
+(8.92 + 5) / 2
+(8.92 + 6) / 2
+11 / 3
+11 % 3
+not(true)
+!true
+true
+false
+!0
+!1
+1 || 0
+!0 || !0 || !0
+!1 || !0 || !0
+!1 || !0 || !1
+!0 || !0 || !1
+1 - 1 / 3
+2 - 1 / 3
+(2 - 1) / 3
+(3 - 1) / 3
+(4 - 1) / 3
+(5 - 1) / 3
+(1 - 1) % 3
+(2 - 1) % 3
+5 / 2
+5 // 2
+12 * 3

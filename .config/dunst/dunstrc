@@ -1,0 +1,107 @@
+# global configuration
+[global]
+    # make the window title and class "dunst"
+    title = dunst
+    class = dunst
+
+    # which monitor the notifications should appear on (fallback)
+    monitor = 0
+    # make the notification appear on the monitor the mouse is on
+    follow = mouse
+
+    # font
+    font = "JetBrains Mono" 12
+    
+    # wrap words
+    word_wrap = yes
+
+    # icon size
+    max_icon_size = 45
+
+    # window geometry
+    geometry = "500x50+5+5"
+    # shrink notification window if it's shorter than the specified geometry 
+    shrink = yes
+
+    # Position the notification in the top right corner
+    origin = top-left
+
+    # Offset from the origin
+    offset = 10x10
+
+    # window padding
+    padding = 10
+    horizontal_padding = 10
+
+    # height of separator
+    separator_height = 2
+    # inherit separator color from frame 
+    separator_color = frame
+
+    # window border size
+    frame_width = 3
+
+    # enable progress bars
+    progress_bar = true
+    # bar height
+    progress_bar_height = 10
+    # minimum width for the progress bar
+    progress_bar_min_width = 0
+    # maximum width for the progress bar
+    progress_bar_max_width = 500
+    # width of progress bar frame
+    progress_bar_frame_width = 2
+
+    # notification format (bold summary followed by regular body)
+    format = "<b>%s</b>\n%b"
+
+    # accept all markup
+    markup = full
+
+    # don't show indicators
+    show_indicators = no
+
+    # sort notifications by urgency
+    sort = yes
+
+    # don't stack duplicate notifications
+    stack_duplicates = false
+    # hide counter of duplicate notifications
+    hide_duplicate_count = false
+
+    # don't indicate hidden notificatons
+    indicate_hidden = no
+
+    # don't store notifications in history
+    history_length = 0
+
+    # don't show age of message
+    show_age_threshold = -1
+
+    # disable the idle threshold (don't remove messages if idle for longer than a certain amount of time)
+    idle_threshold = 0
+    
+    # ignore the dbus close notification message
+    # this is so applications can't close notifications before the defined timeout
+    ignore_dbusclose = true
+
+[urgency_low]
+    background = "#282828"
+    highlight="#ebdbb2"
+    foreground = "#ebdbb2"
+    frame_color = "#b8bb26"
+    timeout = 2
+
+[urgency_normal]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight="#ebdbb2"
+    frame_color = "#fabd2f"
+    timeout = 2.5
+
+[urgency_critical]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight="#ebdbb2"
+    frame_color = "#fb4934"
+    timeout = 10

@@ -14,7 +14,7 @@ cd dotfiles
 ```
 Then make sure the bootstrap script has executions permissions and run it
 ```bash
-chmod 777 bootstrap
-./bootstrap
+chmod +x bootstrap.sh
+./bootstrap.sh
 ```
 Running the script should populate your system with symlinks to the dotfiles contained in the dotfiles folder.

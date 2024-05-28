@@ -1,0 +1,102 @@
+#!/usr/bin/python3
+from typing import List, Dict
+import sys
+import subprocess
+
+
+def get_connected_monitors() -> List[str]:
+    command: str = "xrandr -q | grep ' connected' | awk '{print $1}'"
+    available_monitors: subprocess.run = subprocess.run(
+        command, shell=True, capture_output=True, text=True
+    )
+    return available_monitors.stdout.strip().split("\n")
+
+
+def get_monitor_resolution() -> List[str]:
+    command: str = (
+        "xrandr -q | grep ' connected' | awk '{print $1}' | while read -r output; do xrandr | grep -A 1 \"$output\" | tail -n 1 | awk '{print $1}'; done"
+    )
+    available_resolutions: subprocess.run = subprocess.run(
+        command, shell=True, capture_output=True, text=True
+    )
+    return available_resolutions.stdout.strip().split("\n")
+
+
+def setup_monitors(
+    available_options: Dict[str, str],
+    external_monitor_width: int,
+    internal_monitor_width: int,
+) -> subprocess.CompletedProcess:
+    commands = []
+    for monitor, resolution in available_options.items():
+        monitor_position: int = (external_monitor_width - internal_monitor_width) // 2
+        command: str = ""
+
+        if monitor == "eDP1":
+            command += f" --output {monitor} --mode {resolution} --rate 60.00 --rotate normal --primary --pos {monitor_position}x1080"
+            print("Enabled internal monitor:", monitor)
+        else:
+            command += f" --output {monitor} --mode {resolution} --rate 75.00 --rotate normal --pos 0x0"
+            print("Enabled external monitor:", monitor)
+
+        commands.append(command)
+
+    full_command = "xrandr" + "".join(commands)
+    print(f"Command executed: {full_command}")
+    execute_command = subprocess.run(
+        full_command, shell=True, capture_output=True, text=True
+    )
+
+    return execute_command
+
+
+def set_wallpaper(wallpaper_path: str) -> None:
+    # command: str = (
+    #     f"nitrogen --set-zoom-fill --head=0 {wallpaper_path} && nitrogen --set-zoom-fill --head=1 {wallpaper_path}"
+    # )
+    command: str = ("nitrogen --restore")
+    subprocess.run(command, shell=True, capture_output=True, text=True)
+
+
+def main():
+    monitor_resolutions: List[str] = get_monitor_resolution()
+    if not monitor_resolutions:
+        print("Error: Failed to get available monitor resolutions.")
+        return
+
+    connected_monitors = get_connected_monitors()
+    if not connected_monitors:
+        print("Error: Failed to get available monitors.")
+        return
+
+    available_options: Dict[str, str] = {
+        index: value for index, value in zip(connected_monitors, monitor_resolutions)
+    }
+
+    internal_monitor_width, internal_monitor_height = map(
+        int, available_options[connected_monitors[0]].split("x")
+    )
+    external_monitor_width, external_monitor_height = map(
+        int, available_options[connected_monitors[1]].split("x")
+    )
+
+    if len(sys.argv) < 2:
+        print(f"Usage: .{sys.argv[0]} <path/to/wallpaper/image>")
+        return
+
+    wallpaper_path: str = sys.argv[1]
+
+    setup_result = setup_monitors(
+        available_options=available_options,
+        external_monitor_width=external_monitor_width,
+        internal_monitor_width=internal_monitor_width,
+    )
+
+    if setup_result.returncode == 0:
+        set_wallpaper(wallpaper_path)
+    else:
+        print("Failed to setup monitors. Cannot set wallpaper.")
+
+
+if __name__ == "__main__":
+    main()
