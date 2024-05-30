@@ -22,11 +22,11 @@ exec_always --no-startup-id xset dpms 0 0 900 &
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l &
 
 # Border Settings               border  backgr. text    indicator child_border
-client.focused                  #458588 #272727 #ebdbb2 #1E84B0   #1E84B0
-client.focused_inactive         #83a598 #272727 #15485E #15485E   #15485E
-client.unfocused                #83a598 #272727 #888888 #1A4253   #1A4253
-client.urgent                   #cc241d #272727 #ebdbb2 #900000   #900000
-client.placeholder              #000000 #272727 #ebdbb2 #000000   #0c0c0c
+client.focused                  #458588 #282828 #ebdbb2 #1E84B0   #1E84B0
+client.focused_inactive         #83a598 #282828 #15485E #15485E   #15485E
+client.unfocused                #83a598 #282828 #888888 #1A4253   #1A4253
+client.urgent                   #cc241d #282828 #ebdbb2 #900000   #900000
+client.placeholder              #000000 #282828 #ebdbb2 #000000   #0c0c0c
 client.background               #ffffff
 
 # Apps

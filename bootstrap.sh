@@ -5,7 +5,7 @@ check_package() {
 		echo -e "Package $1 is not installed. Installing..."
 		sudo pacman -S --noconfirm "$1"
 	else
-		echo -e "Package $1 is already installed.\n"
+		echo -e "Package $1 is already installed."
 	fi
 }
 
@@ -18,4 +18,4 @@ done
 
 # Stow the dotfiles
 stow .
-echo -e "Dotfiles have been stowed correctly."
+echo -e "\n\nDotfiles have been stowed correctly."
