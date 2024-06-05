@@ -123,3 +123,4 @@ for_window [class="^.*"] border pixel 2
 # for_window [class="rofi"] floating toggle
 for_window [class="Qalculate-gtk" instance="qalculate-gtk"] floating enable
 for_window [class="Nitrogen" instance="nitrogen"] floating enable
+for_window [class="Arandr" instance="arandr"] floating enable
