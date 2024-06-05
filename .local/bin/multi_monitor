@@ -50,11 +50,15 @@ def setup_monitors(
     return execute_command
 
 
-def set_wallpaper(wallpaper_path: str) -> None:
+def set_wallpaper() -> None:
+    """
+    add the following argument if not using `nitrogen --restore`:
+    wallpaper_path: str
+    """
     # command: str = (
     #     f"nitrogen --set-zoom-fill --head=0 {wallpaper_path} && nitrogen --set-zoom-fill --head=1 {wallpaper_path}"
     # )
-    command: str = ("nitrogen --restore")
+    command: str = "nitrogen --restore"
     subprocess.run(command, shell=True, capture_output=True, text=True)
 
 
@@ -80,11 +84,11 @@ def main():
         int, available_options[connected_monitors[1]].split("x")
     )
 
-    if len(sys.argv) < 2:
-        print(f"Usage: .{sys.argv[0]} <path/to/wallpaper/image>")
-        return
-
-    wallpaper_path: str = sys.argv[1]
+    # if len(sys.argv) < 2:
+    #     print(f"Usage: .{sys.argv[0]} <path/to/wallpaper/image>")
+    #     return
+    #
+    # wallpaper_path: str = sys.argv[1]
 
     setup_result = setup_monitors(
         available_options=available_options,
@@ -93,7 +97,7 @@ def main():
     )
 
     if setup_result.returncode == 0:
-        set_wallpaper(wallpaper_path)
+        set_wallpaper()
     else:
         print("Failed to setup monitors. Cannot set wallpaper.")
 
