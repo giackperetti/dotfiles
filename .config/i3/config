@@ -1,7 +1,7 @@
 # Variables
 set $mod Mod4
 set $alt Mod1
-set $wallpaper_path /home/giack/pictures/Wallpapers/Images/Drawing/Studio\ Ghibli/wind_rises/forest.png
+# set $wallpaper_path /home/giack/pictures/Wallpapers/Images/Drawing/Studio\ Ghibli/wind_rises/forest.png
 
 # Settings
 font pango:JetBrains Mono 10
@@ -11,7 +11,7 @@ gaps outer 5
 
 # Autostart
 exec --no-startup-id dunst
-exec --no-startup-id multi_monitor $wallpaper_path
+exec --no-startup-id multi_monitor
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec --no-startup-id nm-applet
