@@ -11,7 +11,7 @@ gaps outer 5
 
 # Autostart
 exec --no-startup-id dunst
-exec --no-startup-id multi_monitor
+exec --no-startup-id multi-monitor
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id picom -b --config ~/.config/picom/picom.conf
 exec --no-startup-id nm-applet
@@ -47,7 +47,7 @@ bindsym XF86MonBrightnessDown exec /home/giack/.local/bin/changeBrightness down
 bindsym XF86MonBrightnessUp exec /home/giack/.local/bin/changeBrightness up
 
 # Layout Switcher(Fn + F12)
-bindsym XF86Explorer exec /home/giack/.local/bin/toggle_keyboard_layout
+bindsym XF86Explorer exec /home/giack/.local/bin/toggle-keyboard-layout
 
 # Window Management
 bindsym $mod+q kill
