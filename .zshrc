@@ -68,6 +68,6 @@ alias gl="git log --graph --pretty=format:'%C(red)%h%Creset - %s %Cgreen(%cs) %C
 alias gck="git checkout"
 
 # Autostart tmux
-case $- in *i*)
-  if [ -z "$TMUX" ]; then exec tmux; fi;;
-esac
+# case $- in *i*)
+#   if [ -z "$TMUX" ]; then exec tmux; fi;;
+# esac
