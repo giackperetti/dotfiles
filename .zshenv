@@ -5,8 +5,8 @@ export TERM="xterm-256color"
 export TERMINAL="kitty"
 export BROWSER="/usr/bin/brave"
 export CHROME_PATH="$BROWSER"
-export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:/home/giack/coding/.goPath/bin/"
-export GOPATH="/home/giack/coding/.goPath"
+export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/"
+export GOPATH="/home/giack/projects/.goPath"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Themeing
