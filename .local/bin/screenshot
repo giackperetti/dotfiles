@@ -1,6 +1,6 @@
 #!/bin/bash
 
-screenshotPath="/home/giack/pictures/screenshots/$(date +'%d-%m-%Y -> %T')_$RANDOM.jpg"
+screenshotPath="/home/giack/pictures/screenshots/$(date +'%d-%m-%Y-%T')_$RANDOM.jpg"
 
 maim -su "$screenshotPath"
 
