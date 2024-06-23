@@ -1,1 +1,2 @@
 .config/nvim/*.json
+.config/qalculate/*.history
