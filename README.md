@@ -7,7 +7,7 @@ Trying to install these dotfiles on a system that isn't running Arch Linux will 
 - You can install them on your system using the `bootsrap` script present in this repo.
   Firstly clone the repo:
   ```bash
-  git clone https://github.com/giackperetti/arch-i3-dotfiles.git dotfiles/
+  git clone https://github.com/giackperetti/dotfiles.git dotfiles/
   ```
 - Then, open the directoriy the repo has been cloned in:
   ```bash
