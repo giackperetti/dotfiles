@@ -6,7 +6,7 @@ import subprocess
 
 def get_connected_monitors() -> List[str]:
     command: str = "xrandr -q | grep ' connected' | awk '{print $1}'"
-    available_monitors: subprocess.run = subprocess.run(
+    available_monitors = subprocess.run(
         command, shell=True, capture_output=True, text=True
     )
     return available_monitors.stdout.strip().split("\n")
@@ -16,7 +16,7 @@ def get_monitor_resolution() -> List[str]:
     command: str = (
         "xrandr -q | grep ' connected' | awk '{print $1}' | while read -r output; do xrandr | grep -A 1 \"$output\" | tail -n 1 | awk '{print $1}'; done"
     )
-    available_resolutions: subprocess.run = subprocess.run(
+    available_resolutions = subprocess.run(
         command, shell=True, capture_output=True, text=True
     )
     return available_resolutions.stdout.strip().split("\n")
