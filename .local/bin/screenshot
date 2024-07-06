@@ -13,10 +13,11 @@ take_screenshot() {
 
   case "$action" in
   "window")
-    maim -u -i "$(xdotool selectwindow)" "$screenshotPath"
+    windowId=$(xdotool selectwindow)
+    maim -d 3 -u -i "$windowId" "$screenshotPath" | xclip -selection clipboard -t image/jpeg
     ;;
   "select")
-    maim -su "$screenshotPath"
+    maim -su "$screenshotPath" | xclip -selection clipboard -t image/jpeg
     ;;
   *)
     echo "Unknown action: $action"
@@ -28,8 +29,6 @@ take_screenshot() {
     notify-send "Screenshot Error" "Error capturing screenshot."
     exit 1
   fi
-
-  xclip -selection clipboard -t image/jpeg -i "$screenshotPath"
 
   notify-send "Screenshot Taken and Copied" "Screenshot saved: $screenshotPath"
 }
