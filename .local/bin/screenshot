@@ -1,14 +1,37 @@
 #!/bin/bash
 
-screenshotPath="/home/giack/pictures/screenshots/$(date +'%d-%m-%Y-%T')_$RANDOM.jpg"
-
-maim -su "$screenshotPath"
-
-if [ $? -ne 0 ]; then
-	notify-send "Screenshot Error" "Error capturing screenshot."
-	exit 1
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <action>"
+  echo "Available actions: window, select"
+  exit 1
 fi
 
-xclip -selection clipboard -t image/jpeg -i "$screenshotPath"
+take_screenshot() {
+  local action="$1"
+  local screenshotPath
+  screenshotPath="/home/giack/pictures/screenshots/$(date +'%d-%m-%Y-%T')_$RANDOM.jpg"
 
-notify-send "Screenshot Taken and Copied" "Screenshot saved: $screenshotPath"
+  case "$action" in
+  "window")
+    maim -u -i "$(xdotool selectwindow)" "$screenshotPath"
+    ;;
+  "select")
+    maim -su "$screenshotPath"
+    ;;
+  *)
+    echo "Unknown action: $action"
+    exit 1
+    ;;
+  esac
+
+  if [ $? -ne 0 ]; then
+    notify-send "Screenshot Error" "Error capturing screenshot."
+    exit 1
+  fi
+
+  xclip -selection clipboard -t image/jpeg -i "$screenshotPath"
+
+  notify-send "Screenshot Taken and Copied" "Screenshot saved: $screenshotPath"
+}
+
+take_screenshot "$1"
