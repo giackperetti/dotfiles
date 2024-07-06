@@ -9,7 +9,7 @@ check_package() {
   fi
 }
 
-required_packages=("git" "base-devel" "stow" "i3-wm" "i3status" "zsh" "tmux" "kitty" "neovim" "dunst" "zathura" "bat" "rofi" "picom" "ranger" "libqalculate" "xdotool")
+required_packages=("git" "base-devel" "stow" "i3-wm" "i3status" "zsh" "tmux" "kitty" "neovim" "dunst" "zathura" "bat" "rofi" "picom" "ranger" "libqalculate" "xdotool" "maim")
 
 # Check and install required packages
 for package in "${required_packages[@]}"; do
