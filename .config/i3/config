@@ -39,8 +39,10 @@ bindsym $mod+$alt+End exec --no-startup-id rofi -font "JetBrainsMono Nerd Font M
 bindsym $mod+Shift+r restart
 # Lock session using betterlockscreen
 bindsym $mod+Shift+Escape exec betterlockscreen -l
-# Take a screenshot with a custom script
-bindsym $mod+Shift+s exec /home/giack/.local/bin/screenshot
+
+# Take screenshots with a custom script
+bindsym $mod+Shift+s exec /home/giack/.local/bin/screenshot select
+bindsym $mod+Shift+Control+s exec /home/giack/.local/bin/screenshot window
 
 # Brightness Control(Fn + F5/F6)
 bindsym XF86MonBrightnessDown exec /home/giack/.local/bin/changeBrightness down
