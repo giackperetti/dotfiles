@@ -42,7 +42,7 @@ bindsym $mod+Shift+Escape exec betterlockscreen -l
 
 # Take screenshots with a custom script
 bindsym $mod+Shift+s exec /home/giack/.local/bin/screenshot select
-bindsym $mod+Shift+Control+s exec /home/giack/.local/bin/screenshot window
+bindsym $mod+Shift+a exec /home/giack/.local/bin/screenshot window
 
 # Brightness Control(Fn + F5/F6)
 bindsym XF86MonBrightnessDown exec /home/giack/.local/bin/changeBrightness down
