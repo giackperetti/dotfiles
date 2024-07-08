@@ -14,7 +14,7 @@ take_screenshot() {
   case "$action" in
   "window")
     windowId=$(xdotool selectwindow)
-    maim -d 3 -u -i "$windowId" "$screenshotPath" | xclip -selection clipboard -t image/jpeg
+    maim -u -i "$windowId" "$screenshotPath" | xclip -selection clipboard -t image/jpeg
     ;;
   "select")
     maim -su "$screenshotPath" | xclip -selection clipboard -t image/jpeg
