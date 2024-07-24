@@ -17,6 +17,6 @@ Trying to install these dotfiles on a system that isn't running Arch Linux will 
 
   This will install all the required packages(if missing) and it will create symlinks in the correct directories using stow
   ```bash
-  chmod +x bootstrap.sh
-  ./bootstrap.sh
+  chmod +x bootstrap-arch.sh
+  ./bootstrap-arch.sh
   ```
