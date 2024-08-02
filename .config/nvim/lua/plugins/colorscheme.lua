@@ -4,7 +4,9 @@ return {
   },
 
   {
-    "shaunsingh/nord.nvim",
+    -- "shaunsingh/nord.nvim",
+    -- "nordtheme/vim",
+    "gbprod/nord.nvim",
   },
 
   {
