@@ -27,7 +27,7 @@ client.focused_inactive         #83a598 #282828 #15485E #15485E   #15485E
 client.unfocused                #83a598 #282828 #888888 #1A4253   #1A4253
 client.urgent                   #cc241d #282828 #ebdbb2 #900000   #900000
 client.placeholder              #000000 #282828 #ebdbb2 #000000   #0c0c0c
-client.background               #ffffff
+client.background               #282828
 
 # Apps
 bindsym $mod+Return exec kitty
