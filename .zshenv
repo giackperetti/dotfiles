@@ -7,7 +7,7 @@ export PAGER="bat --plain"
 export MANPAGER="most"
 export BROWSER="/usr/bin/brave"
 export CHROME_PATH="$BROWSER"
-export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/"
+export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/:/home/giack/.local/share/JetBrains/Toolbox/"
 export GOPATH="/home/giack/projects/.goPath"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
