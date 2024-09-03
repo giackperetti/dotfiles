@@ -17,3 +17,6 @@ vim.g.have_nerd_font = true
 
 -- Disable spell checking
 vim.opt.spell = false
+
+-- Use ruff as python lsp
+vim.g.lazyvim_python_lsp = "pyright"
