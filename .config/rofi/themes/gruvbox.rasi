@@ -1,10 +1,10 @@
 configuration {
 
-	font: "JetBrains Mono 14";
-	width: 30;
-	line-margin: 10;
-	lines: 6;
-	columns: 1;
+  font: "JetBrains Mono 14";
+  width: 30;
+  line-margin: 10;
+  lines: 6;
+  columns: 1;
 
   display-ssh:    "";
   display-run:    "";
