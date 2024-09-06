@@ -11,7 +11,7 @@
 
     # font
     font = "JetBrains Mono" 12
-
+    
     # wrap words
     word_wrap = yes
 
@@ -86,22 +86,22 @@
     ignore_dbusclose = true
 
 [urgency_low]
-    background = "#3b4252"
-    foreground = "#d8dee9"
-    highlight = "#d8dee9"
-    frame_color = "#a3be8c"
+    background = "#282828"
+    highlight="#ebdbb2"
+    foreground = "#ebdbb2"
+    frame_color = "#b8bb26"
     timeout = 2
 
 [urgency_normal]
-    background = "#3b4252"
-    foreground = "#d8dee9"
-    highlight = "#d8dee9"
-    frame_color = "#ebcb8b"
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight="#ebdbb2"
+    frame_color = "#fabd2f"
     timeout = 2.5
 
 [urgency_critical]
-    background = "#3b4252"
-    foreground = "#d8dee9"
-    highlight = "#d8dee9"
-    frame_color = "#bf616a"
-    timeout = 5
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight="#ebdbb2"
+    frame_color = "#fb4934"
+    timeout = 10

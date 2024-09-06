@@ -22,12 +22,12 @@ exec_always --no-startup-id xset dpms 0 0 900 &
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l &
 
 # Border Settings               border  backgr. text    indicator child_border
-client.focused                  #88c0d0 #2e3440 #d8dee9 #1E84B0   #1E84B0
-client.focused_inactive         #8fbcbb #2e3440 #15485E #15485E   #15485E
-client.unfocused                #8fbcbb #2e3440 #888888 #1A4253   #1A4253
-client.urgent                   #bf616a #2e3440 #d8dee9 #900000   #900000
-client.placeholder              #000000 #2e3440 #d8dee9 #000000   #0c0c0c
-client.background               #2e3440
+client.focused                  #458588 #282828 #ebdbb2 #1E84B0   #1E84B0
+client.focused_inactive         #83a598 #282828 #15485E #15485E   #15485E
+client.unfocused                #83a598 #282828 #888888 #1A4253   #1A4253
+client.urgent                   #cc241d #282828 #ebdbb2 #900000   #900000
+client.placeholder              #000000 #282828 #ebdbb2 #000000   #0c0c0c
+client.background               #282828
 
 # Apps
 bindsym $mod+Return exec kitty
@@ -108,15 +108,14 @@ bar {
       position bottom
 
       colors {
-        # background can be #282828(gruvbox black, no transparency) or #00000000(fully transparent)
-        # right now its set to Nord colors
-        background #2e3440
-        statusline #d8dee9
+        #background can be #282828(gruvbox black, no transparency) or #00000000(fully transparent)
+        background #282828
+        statusline #ebdbb2
 
-        focused_workspace   #d8dee9 #88c0d0
-        active_workspace    #d8dee9 #88c0d0
-        inactive_workspace  #d8dee9 #8fbcbb
-        urgent_workspace    #d8dee9 #bf616a
+        focused_workspace   #ebdbb2 #458588
+        active_workspace    #ebdbb2 #458588
+        inactive_workspace  #ebdbb2 #83a598
+        urgent_workspace    #ebdbb2 #cc241d
       }
 }
 
