@@ -64,6 +64,8 @@ alias gps="git push"
 alias gpl="git pull"
 alias gplr="git pull --rebase"
 alias gs="git status"
+alias gd="git diff"
+alias gds="git diff --staged"
 alias gl="git log --graph --pretty=format:'%C(red)%h%Creset - %s %Cgreen(%cs) %C(bold blue)<%an>%Creset%C(magenta)%d%Creset'"
 alias gck="git checkout"
 
