@@ -13,3 +13,7 @@ vim.keymap.set("n", "<M-j>", ":resize -2<CR>")
 vim.keymap.set("n", "<M-k>", ":resize +2<CR>")
 vim.keymap.set("n", "<M-h>", ":vertical resize -2<CR>")
 vim.keymap.set("n", "<M-l>", ":vertical resize +2<CR>")
+
+-- "x" actually deletes and doesnt cut("d" does that already)
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("v", "x", '"_x')
