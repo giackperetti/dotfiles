@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 from typing import List, Dict
-import sys
 import subprocess
+
+# import sys
 
 
 def get_connected_monitors() -> List[str]:
