@@ -34,6 +34,7 @@ alias cal="cal -3m"
 alias feh="feh -."
 alias cat="bat"
 alias ping="gping"
+alias setupArduino="sudo chmod a+rw /dev/ttyACM0"
 
 # Colorize commands output
 alias grep='grep --color=always'
