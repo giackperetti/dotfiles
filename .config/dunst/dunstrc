@@ -11,7 +11,7 @@
 
     # font
     font = "JetBrains Mono" 12
-    
+
     # wrap words
     word_wrap = yes
 
@@ -85,23 +85,18 @@
     # this is so applications can't close notifications before the defined timeout
     ignore_dbusclose = true
 
+    # set a default frame color
+    frame_color = "#89b4fa"
+
 [urgency_low]
-    background = "#282828"
-    highlight="#ebdbb2"
-    foreground = "#ebdbb2"
-    frame_color = "#b8bb26"
-    timeout = 2
+background = "#1e1e2e"
+foreground = "#cdd6f4"
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#ebdbb2"
-    highlight="#ebdbb2"
-    frame_color = "#fabd2f"
-    timeout = 2.5
+background = "#1e1e2e"
+foreground = "#cdd6f4"
 
 [urgency_critical]
-    background = "#282828"
-    foreground = "#ebdbb2"
-    highlight="#ebdbb2"
-    frame_color = "#fb4934"
-    timeout = 10
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+frame_color = "#fab387"
