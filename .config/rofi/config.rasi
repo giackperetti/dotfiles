@@ -1,7 +1,17 @@
-configuration {
-    show-icons: true;
-    icon-theme: "Papirus-Nord";
+configuration{
+    modi: "run,drun,window";
     font: "JetBrains Mono 10";
+    icon-theme: "Oranchelo";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 󰕰  Window";
+    display-Network: " 󰤨  Network";
 }
-@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"
+
+@theme "/usr/share/rofi/themes/catppuccin-mocha.rasi"
 //@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"
