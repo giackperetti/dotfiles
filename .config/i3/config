@@ -3,6 +3,34 @@ set $mod Mod4
 set $alt Mod1
 # set $wallpaper_path /home/giack/pictures/Wallpapers/Images/Drawing/Studio\ Ghibli/wind_rises/forest.png
 
+# Catppuccin Colors
+set $rosewater #f5e0dc
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
+
 # Settings
 font pango:JetBrains Mono 10
 default_border pixel
@@ -21,13 +49,13 @@ exec xrdb ~/.Xresources
 exec_always --no-startup-id xset dpms 0 0 900 &
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l &
 
-# Border Settings               border  backgr. text    indicator child_border
-client.focused                  #458588 #282828 #ebdbb2 #1E84B0   #1E84B0
-client.focused_inactive         #83a598 #282828 #15485E #15485E   #15485E
-client.unfocused                #83a598 #282828 #888888 #1A4253   #1A4253
-client.urgent                   #cc241d #282828 #ebdbb2 #900000   #900000
-client.placeholder              #000000 #282828 #ebdbb2 #000000   #0c0c0c
-client.background               #282828
+# Border Settings               border    backgr.  text    indicator child_border
+client.focused                  $blue     $base    $text   #1E84B0   #1E84B0
+client.focused_inactive         $sapphire $base    $text   #15485E   #15485E
+client.unfocused                $sapphire $base    $text   #1A4253   #1A4253
+client.urgent                   $red      $base    $text   #900000   #900000
+client.placeholder              $mauve    $base    $text   #000000   #0c0c0c
+client.background               $base
 
 # Apps
 bindsym $mod+Return exec kitty
@@ -108,14 +136,14 @@ bar {
       position bottom
 
       colors {
-        #background can be #282828(gruvbox black, no transparency) or #00000000(fully transparent)
-        background #282828
-        statusline #ebdbb2
+        #background can be a specific color or #00000000(fully transparent)
+        background $base 
+        statusline $text
 
-        focused_workspace   #ebdbb2 #458588
-        active_workspace    #ebdbb2 #458588
-        inactive_workspace  #ebdbb2 #83a598
-        urgent_workspace    #ebdbb2 #cc241d
+        focused_workspace   $text $blue
+        active_workspace    $text $blue
+        inactive_workspace  $text $overlay2
+        urgent_workspace    $text $red
       }
 }
 
