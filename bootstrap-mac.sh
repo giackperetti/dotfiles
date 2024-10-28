@@ -1,26 +1,36 @@
 #!/bin/bash
 
+# Function to check and install a Homebrew package
 check_package() {
-  if ! pacman -Q "$1" &>/dev/null; then
+  if ! brew list "$1" &>/dev/null; then
     echo -e "Package $1 is not installed. Installing..."
-    sudo pacman -S --noconfirm "$1"
+    brew install "$1"
   else
     echo -e "Package $1 is already installed."
   fi
 }
 
-required_packages=("git" "base-devel" "stow" "i3-wm" "i3status" "zsh" "tmux" "kitty" "neovim" "dunst" "zathura" "bat" "rofi" "picom" "yazi" "libqalculate" "xdotool" "maim")
+# List of required packages for macOS
+required_packages=("git" "stow" "zsh" "tmux" "kitty" "neovim" "bat" "yazi")
+
+# Install Homebrew if it's not installed
+if ! command -v brew &>/dev/null; then
+  echo "Homebrew is not installed. Installing..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  echo "Homebrew is already installed."
+fi
 
 # Install all required packages
 for package in "${required_packages[@]}"; do
   check_package "$package"
 done
 
-# Install oh-my-zsh and required plugins
+# Install Oh My Zsh and required plugins
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Oh My Zsh is not installed. Installing..."
 
-  # Install oh-my-zsh itself
+  # Install Oh My Zsh itself
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   # Install required plugins
@@ -37,6 +47,15 @@ else
   echo "Default shell is already ZSH."
 fi
 
-# Stow the dotfiles
-stow .
+# Stow only mac-specific and shared dotfiles
+echo "Stowing macOS-specific dotfiles..."
+stow -v .oh-my-zsh/custom/themes
+stow -v .config/bat
+stow -v .config/kitty
+stow -v .config/nvim
+stow -v .config/tmux
+stow -v .config/zathura
+stow -v .zshrc
+stow -v .zshenv
+stow -v .gitconfig
 echo -e "\n\nDotfiles have been stowed correctly."
