@@ -10,11 +10,11 @@ export CHROME_PATH="$BROWSER"
 export CHROME_EXECUTABLE="/usr/bin/google-chrome"
 
 # Flutter Env Variables
-export ANDROID_HOME=$HOME/.android-sdk
+export ANDROID_HOME=$HOME/.android
 export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
 
 # Path
-export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/:/home/giack/.local/share/JetBrains/Toolbox/:$ANDROID_HOME/platform-tools"
+export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/:/home/giack/.local/share/JetBrains/Toolbox/:$ANDROID_HOME/Sdk/platform-tools/:$ANDROID_HOME/Sdk/cmdline-tools/latest/bin/:$ANDROID_HOME/Sdk/emulator/"
 
 # Go path
 export GOPATH="/home/giack/projects/.goPath"
