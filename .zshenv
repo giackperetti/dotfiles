@@ -7,9 +7,20 @@ export PAGER="bat --plain"
 export MANPAGER="most"
 export BROWSER="/usr/bin/brave"
 export CHROME_PATH="$BROWSER"
-export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/:/home/giack/.local/share/JetBrains/Toolbox/"
+
+# Flutter Env Variables
+export ANDROID_HOME=$HOME/.android-sdk
+export JAVA_HOME=/usr/lib/jvm/java-23-openjdk
+
+# Path
+export PATH="$PATH:/home/giack/.local/bin:/home/giack/.cargo/bin/:$GOPATH/bin/:/home/giack/.local/share/JetBrains/Toolbox/:$ANDROID_HOME/platform-tools"
+
+# Go path
 export GOPATH="/home/giack/projects/.goPath"
+
+# Disable Dotnet telemetry
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 
 # Themeing
 export BAT_THEME="Catppuccin Mocha"
