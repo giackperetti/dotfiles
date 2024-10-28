@@ -7,6 +7,7 @@ export PAGER="bat --plain"
 export MANPAGER="most"
 export BROWSER="/usr/bin/brave"
 export CHROME_PATH="$BROWSER"
+export CHROME_EXECUTABLE="$BROWSER"
 
 # Flutter Env Variables
 export ANDROID_HOME=$HOME/.android-sdk
