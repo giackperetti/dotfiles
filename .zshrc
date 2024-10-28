@@ -53,6 +53,7 @@ alias free='free -m' # show sizes in MB
 # Ls Replacement
 alias ls="exa"
 alias la="ls -a"
+alias lla="ll -a"
 alias lt="ls --tree"
 alias lta="ls -a --tree"
 
