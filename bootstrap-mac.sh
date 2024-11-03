@@ -11,7 +11,7 @@ check_package() {
 }
 
 # List of required packages for macOS
-required_packages=("git" "stow" "zsh" "tmux" "kitty" "neovim" "bat" "yazi")
+required_packages=("git" "stow" "zsh" "tmux" "neovim" "bat" "eza")
 
 # Install Homebrew if it's not installed
 if ! command -v brew &>/dev/null; then
@@ -54,8 +54,8 @@ stow -v .config/bat
 stow -v .config/kitty
 stow -v .config/nvim
 stow -v .config/tmux
-stow -v .config/zathura
 stow -v .zshrc
 stow -v .zshenv
 stow -v .gitconfig
 echo -e "\n\nDotfiles have been stowed correctly."
+echo -e "\n\nTo make use of all the configurations install Kitty, VS Code and all other GUI applications that may be useful"
